@@ -1,1 +1,27 @@
+name: Terraform Apply
 
+on:
+  push:
+    branches:
+      - main  # Modify as needed
+
+jobs:
+  terraform:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Terraform
+        uses: hashicorp/setup-terraform@v1
+        with:
+          terraform_version: 1.0.0  # Modify as needed
+
+      - name: Terragrunt Apply - Dev
+        run: cd dev && terragrunt apply -auto-approve
+
+      - name: Terragrunt Apply - Prod
+        run: cd prod && terragrunt apply -auto-approve
+
+      # Add more steps as needed, such as testing, validation, and notifications.
