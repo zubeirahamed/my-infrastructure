@@ -24,9 +24,9 @@ jobs:
           chmod +x /usr/local/bin/terragrunt
 
       - name: Terragrunt Apply - Dev
-        run: cd dev && terragrunt apply -auto-approve
+        run: cd myinfrastructure/dev && terragrunt apply -auto-approve
 
       - name: Terragrunt Apply - Prod
-        run: cd prod && terragrunt apply -auto-approve
+        run: cd myinfrastructure/prod && terragrunt apply -auto-approve
 
       # Add more steps as needed, such as testing, validation, and notifications.
