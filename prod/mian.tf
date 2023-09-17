@@ -1,9 +1,9 @@
 provider "aws" {
-  region = "us-east-2"
+  region = "us-west-2"
 }
 
 resource "aws_instance" "prod-inst-grunt" {
-  ami           = "ami-024e6efaf93d85776"
+  ami           = "ami-03f65b8614a860c29"
   instance_type = "t2.micro"
   tags = {
           Name = "prod-inst-grunt"
@@ -14,7 +14,7 @@ terraform {
   backend "s3" {
     bucket         = "my-terragrunt-bucket2"
     key            = "terraform-states/dev/terraform.tfstate"
-    region         = "us-east-2"  # Your AWS region
+    region         = "us-west-2"  # Your AWS region
     encrypt        = true
   }
 }
