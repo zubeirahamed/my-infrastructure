@@ -3,7 +3,7 @@ remote_state {
   config = {
     bucket         = "my-terragrunt-bucket"
     key            = "${path_relative_to_include()}/terraform.tfstate"
-    region         = "us-east-2"
+    region         = "us-east-1"
     encrypt        = true
   }
 }
