@@ -1,8 +1,3 @@
-terraform {
-  backend = "s3" {
-    bucket         = "my-terragrunt-bucket1"
-    key            = "dev/${path_relative_to_include()}/terraform.tfstate"
-    region         = "us-east-1"
-    encrypt        = true
-  }
+remote_state {
+  config_path = find_in_parent_folders()
 }
