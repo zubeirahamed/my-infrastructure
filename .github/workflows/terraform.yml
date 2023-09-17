@@ -25,12 +25,11 @@ jobs:
           wget -q https://github.com/gruntwork-io/terragrunt/releases/download/v0.31.3/terragrunt_linux_amd64 -O /usr/local/bin/terragrunt
           chmod +x /usr/local/bin/terragrunt
 
-      - name: Terragrunt run-all Apply - Dev
+      - name: Terragrunt Apply - Dev
         working-directory: dev
         run: |
-          terragrunt run-all init
-          yes
-          terragrunt run-all apply -auto-approve
+          terragrunt init
+          terragrunt apply -auto-approve
 
       - name: Set up AWS CLI
         uses: aws-actions/configure-aws-credentials@v1
@@ -39,9 +38,8 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-2  # Specify the US East region
 
-      - name: Terragrunt run-all Apply - Prod
+      - name: Terragrunt Apply - Prod
         working-directory: prod
         run: |
-          terragrunt run-all init
-          yes
-          terragrunt run-all apply -auto-approve
+          terragrunt init
+          terragrunt apply -auto-approve
