@@ -7,4 +7,3 @@ remote_state {
     encrypt        = true
   }
 }
-
