@@ -1,12 +1,8 @@
 provider "aws" {
-  region = "us-east-1"
+  region = "us-west-2"
 }
 
-resource "aws_instance" "terra-grunt-prod" {
-  ami           = "ami-053b0d53c279acc90"  
+resource "aws_instance" "example" {
+  ami           = "ami-0c55b159cbfafe1f0"
   instance_type = "t2.micro"
-
-  tags = {
-    Name = "terra-grunt-instance-prod"
-  }
 }
