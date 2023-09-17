@@ -29,6 +29,7 @@ jobs:
         working-directory: dev
         run: |
           terragrunt run-all init
+          yes
           terragrunt run-all apply -auto-approve
 
       - name: Set up AWS CLI
@@ -42,4 +43,5 @@ jobs:
         working-directory: prod
         run: |
           terragrunt run-all init
+          yes
           terragrunt run-all apply -auto-approve
