@@ -16,8 +16,8 @@ jobs:
       - name: Set up AWS CLI - US East
         uses: aws-actions/configure-aws-credentials@v1
         with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID_US_EAST }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY_US_EAST }}
+          aws-access-key-id: ${{ secrets.SECRET_NAME }}
+          aws-secret-access-key: ${{ secrets.SECRET_NAME }}
           aws-region: us-east-1  # Specify the US East region
 
       - name: Install Terragrunt
@@ -34,8 +34,8 @@ jobs:
       - name: Set up AWS CLI - US East
         uses: aws-actions/configure-aws-credentials@v1
         with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID_US_WEST }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY_US_WEST }}
+          aws-access-key-id: ${{ secrets.SECRET_NAME }}
+          aws-secret-access-key: ${{ secrets.SECRET_NAME }}
           aws-region: us-east-2  # Specify the US East region
 
       - name: Terragrunt Apply - Prod
