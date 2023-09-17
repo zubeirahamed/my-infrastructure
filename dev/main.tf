@@ -12,7 +12,7 @@ resource "aws_instance" "dev-inst-grunt" {
 
 terraform {
   backend "s3" {
-    bucket         = "my-terragrunt-bucket1"
+    bucket         = "my-terragrunt-bucket3"
     key            = "terraform-states/dev/terraform.tfstate"
     region         = "us-west-1"  # Your AWS region
     encrypt        = true
