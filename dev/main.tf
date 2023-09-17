@@ -9,7 +9,7 @@ resource "aws_instance" "dev-inst-grunt" {
 
 terraform {
   backend "s3" {
-    bucket         = "your-s3-bucket-name"
+    bucket         = "my-terragrunt-bucket1"
     key            = "path/to/terraform.tfstate"
     region         = "us-east-1"  # Your AWS region
     encrypt        = true
